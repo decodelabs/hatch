@@ -9,7 +9,7 @@
 
 ### Simple code generation tools
 
-Hatch provides ...
+Hatch provides a set of simple tools for generating PHP code.
 
 _Get news and updates on the [DecodeLabs blog](https://blog.decodelabs.com)._
 
@@ -25,7 +25,45 @@ composer require decodelabs/hatch
 
 ## Usage
 
-Coming soon...
+### Static arrays
+
+Export arrays of data for reuse as config files or static loadable datastructures.
+
+```php
+use DecodeLabs\Hatch;
+
+$code = Hatch::exportStaticArray([
+    'foo' => 'bar',
+    'baz' => 'qux',
+    'quux' => [
+        'corge' => 'grault',
+        'garply' => 12,
+        'fred' => [
+            'plugh' => 'xyzzy',
+            'thud' => [1, 2, 3]
+        ]
+    ]
+]);
+
+echo $code;
+```
+
+This will output:
+
+```php
+return [
+    'foo' => 'bar',
+    'baz' => 'qux',
+    'quux' => [
+        'corge' => 'grault',
+        'garply' => 12,
+        'fred' => [
+            'plugh' => 'xyzzy',
+            'thud' => [1, 2, 3]
+        ]
+    ]
+];
+```
 
 ## Licensing
 
