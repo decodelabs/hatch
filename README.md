@@ -51,7 +51,7 @@ echo $code;
 This will output:
 
 ```php
-return [
+[
     'foo' => 'bar',
     'baz' => 'qux',
     'quux' => [
@@ -62,7 +62,7 @@ return [
             'thud' => [1, 2, 3]
         ]
     ]
-];
+]
 ```
 
 ## Licensing
