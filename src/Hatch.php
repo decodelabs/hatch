@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace DecodeLabs;
 
-use DecodeLabs\Hatch\Representation\StaticExpression as StaticExpressionRepresentation;
 use DecodeLabs\Hatch\Proxy\StaticExpression as StaticExpressionProxy;
+use DecodeLabs\Hatch\Representation\StaticExpression as StaticExpressionRepresentation;
 
 class Hatch
 {
@@ -36,7 +36,7 @@ class Hatch
                 $output .= '\'' . addslashes((string)$key) . '\' => ';
             }
 
-            if($val instanceof StaticExpressionRepresentation) {
+            if ($val instanceof StaticExpressionRepresentation) {
                 $output .= (string)$val;
             } elseif ($val instanceof StaticExpressionProxy) {
                 $output .= (string)$val->exportToStaticExpression();

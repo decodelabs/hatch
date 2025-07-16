@@ -13,5 +13,4 @@ use Stringable;
 
 interface Representation extends Stringable
 {
-
 }

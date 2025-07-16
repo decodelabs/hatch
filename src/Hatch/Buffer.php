@@ -13,7 +13,8 @@ class Buffer implements Representation
 {
     public function __construct(
         private string $code
-    ) {}
+    ) {
+    }
 
     public function __toString(): string
     {
