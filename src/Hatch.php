@@ -11,13 +11,14 @@ namespace DecodeLabs;
 
 use DecodeLabs\Hatch\Proxy\StaticExpression as StaticExpressionProxy;
 use DecodeLabs\Hatch\Representation\StaticExpression as StaticExpressionRepresentation;
+use UnitEnum;
 
 class Hatch
 {
     /**
      * Export array to PHP
      *
-     * @param array<int|string,bool|float|int|array<mixed>|string|StaticExpressionRepresentation|StaticExpressionProxy|null> $values
+     * @param array<int|string,bool|float|int|array<mixed>|string|StaticExpressionRepresentation|StaticExpressionProxy|UnitEnum|null> $values
      */
     public static function exportStaticArray(
         array $values,
@@ -52,6 +53,8 @@ class Hatch
                 $output .= $val;
             } elseif (is_bool($val)) {
                 $output .= $val ? 'true' : 'false';
+            } elseif ($val instanceof UnitEnum) {
+                $output .= '\\' . $val::class . '::' . $val->name;
             } else {
                 $output .= '\'' . addslashes($val) . '\'';
             }
