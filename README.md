@@ -17,6 +17,8 @@ _Get news and updates on the [DecodeLabs blog](https://blog.decodelabs.com)._
 
 ## Installation
 
+This package requires PHP 8.4 or higher.
+
 Install via Composer:
 
 ```bash
